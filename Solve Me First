@@ -1,0 +1,9 @@
+def solveMeFirst(a,b):
+   # Hint: Type return a+b below
+   # this was an obvious one
+   return a + b
+
+num1 = raw_input()
+num2 = raw_input()
+res = solveMeFirst(num1,num2)
+print res
