@@ -1,0 +1,32 @@
+class Matrix():
+    def __init__(self):
+        self.num = 0
+        self.num_list = []
+
+
+    def total_list(self, num, num_list):
+        total = 0
+        for i in range(num):
+            total += num_list[i][i]
+        return total
+
+
+    def get_abs_difference(self, val_a, val_b):
+        if val_a > val_b:
+            return val_a - val_b
+        else:
+            return val_b - val_a
+
+# input
+#3
+#11 2 4
+#4 5 6
+#10 8 -12
+
+num = 3
+num_list = [[11, 2, 4], [4, 5, 6], [10, 8, -12]]
+
+matrix = Matrix()
+l_to_r = matrix.total_list(num, num_list)
+r_to_l = matrix.total_list(num, num_list[::-1])
+print matrix.get_abs_difference(l_to_r, r_to_l)
