@@ -1,0 +1,11 @@
+def right_justify(num):
+    data = []
+    pound = '#'
+    for i in range(num):
+        data.append('%s' % pound.rjust(num))
+        pound += '#'
+
+    return '\n'.join(data)
+
+n = int(raw_input().strip())
+print right_justify(n)
