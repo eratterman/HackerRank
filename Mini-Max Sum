@@ -1,0 +1,6 @@
+def min_max(arr):
+    my_list = [long(sum(arr) - arr[i]) for i in range(len(arr))]
+    return '%s %s' % (min(my_list), max(my_list))
+
+arr = map(int, raw_input().strip().split(' '))
+print min_max(arr)
