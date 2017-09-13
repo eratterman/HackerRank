@@ -1,0 +1,19 @@
+def timeConversion(s):
+    # Complete this function
+    hour = s.split(':')[0]
+    mins = s.split(':')[1]
+    secs = s.split(':')[2][:2]
+    am_pm = s[-2:].lower()
+
+    if hour == '12' and am_pm == 'am':
+        hour = '00'
+    elif int(hour) < 12 and am_pm == 'pm':
+        hour = int(hour)
+        hour += 12
+        hour = str(hour).zfill(2)
+
+    return '%s:%s:%s' % (hour, mins, secs)
+
+s = raw_input().strip()
+result = timeConversion(s)
+print(result)
