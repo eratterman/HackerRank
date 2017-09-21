@@ -1,0 +1,27 @@
+def solve(grades):
+    final_grades = []
+    for grade in grades:
+        if grade < 38:
+            final_grades.append(grade)
+            continue
+
+        # determine next multiple of 5
+        next_five = grade
+        while next_five % 5 != 0:
+            next_five += 1
+
+        if next_five - grade < 3:
+            final_grades.append(next_five)
+        else:
+            final_grades.append(grade)
+
+    return final_grades
+
+n = int(raw_input().strip())
+grades = []
+grades_i = 0
+for grades_i in xrange(n):
+    grades_t = int(raw_input().strip())
+    grades.append(grades_t)
+result = solve(grades)
+print "\n".join(map(str, result))
